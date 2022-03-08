@@ -1,0 +1,15 @@
+import cv2 as cv
+img = cv.imread("testeOpenCV.jpg")
+b, g, r = cv.split(img)
+cv.imshow("Joelma Canal Azul", b)
+cv.waitKey(0)
+cv.imshow("Joelma Canal Verde", g)
+cv.waitKey(0)
+cv.imshow("Joelma Canal Vermelho", r)
+cv.waitKey(0)
+bgr = cv.merge((b, g, r))
+cv.imshow("Joelma Todos os Canais", bgr)
+cv.waitKey(0)
+img[:, :, 2] = 0
+cv.imshow("Joelma Sem Canal Vermelho", img)
+cv.waitKey(0)
